@@ -7,6 +7,17 @@ function radio_value(element) {
 }
 
 function handle_add_item_form_submit(form) {
-  var color = radio_value(form.color)
-  top.frames[0].add_item(form.description.value, color);
+  var color = radio_value(form.color);
+  var description = form.description.value;
+  new Request({ 
+    url: '/items', 
+    method: 'post', 
+    data: { description: description, color: color },
+    onFailure: function(instance){ 
+      alert('oops! something went wrong.');
+    }, 
+    onSuccess: function(result){ 
+      top.frames[0].add_item(description, color);
+    } 
+  }).send(); 
 }

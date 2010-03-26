@@ -3,13 +3,21 @@ require 'sinatra'
 require 'haml'
 require 'dm-core'
 require 'sinatra-authentication'
+require 'json'
 
 use Rack::Session::Cookie, :secret => ENV['SESSION_SECRET'] || 'This is a secret key that no one will guess~'
 
-class Something
+class Item
   include DataMapper::Resource
   property :id, Serial
-  property :stuff, String
+  property :description, String
+  property :color, String, :length => 20
+
+  belongs_to :dm_user
+end
+
+class DmUser
+  has n, :items
 end
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/test.db")
@@ -21,6 +29,15 @@ end
 
 get '/board' do
   haml :board, :layout => false
+end
+
+post '/items' do
+  current_user.items.create(params)
+  "ok"
+end
+
+get '/items' do
+  current_user.items.map {|item| item.attributes}.to_json
 end
 
 def name

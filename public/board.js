@@ -4,8 +4,24 @@ window.addEvent('domready', function() {
   items = {"red": [], "yellow": [], "green": [], "blue": []};
   board_width = 1000;
   board_height = 500;
+  load_items();
   window.scroll(1000 - board_width/2, 1000 - board_height/2);
 }); 
+
+function load_items() {
+  new Request.JSON({ 
+    url: '/items', 
+    method: 'get', 
+    onFailure: function(instance){ 
+      alert('oops! something went wrong.');
+    }, 
+    onSuccess: function(obj){ 
+      obj.each(function(item) {
+        add_item(item.description, item.color)
+      });
+    } 
+  }).send(); 
+}
 
 function add_item(description, color) {
   items[color].push(description);
