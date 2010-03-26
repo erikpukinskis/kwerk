@@ -1,0 +1,5 @@
+function quadrant_size() {
+  max = Math.max(items["red"].length, items["green"].length, 
+    items["blue"].length, items["yellow"].length);
+  return Math.ceil(Math.sqrt(max));
+}

@@ -1,16 +1,3 @@
-function radio_value(element) {
-  for(var i=0; i<element.length; i++) {
-    if (element[i].checked) {
-      return element[i].value;
-    }
-  }
-}
-
-function handle_add_item_form_submit(form) {
-  var color = radio_value(form.color)
-  top.frames[0].add_item(form.description.value, color);
-}
-
 var items
 function initialize() {
   items = {"red": [], "yellow": [], "green": [], "blue": []};
@@ -45,8 +32,8 @@ function draw_quadrant(color, x_direction, y_direction) {
 }
 
 function add_box(ix, iy, x_direction, y_direction, color, description) {
-  origin_x = 400;
-  origin_y = 200;
+  origin_x = 1000;
+  origin_y = 1000;
   box_size = 100;
 
   x = origin_x + ix * box_size * x_direction + x_direction*50;

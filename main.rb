@@ -19,6 +19,10 @@ get '/' do
   haml :index
 end
 
+get '/board' do
+  haml :board, :layout => false
+end
+
 def name
   current_user.email.split("@")[0]
 end
@@ -62,3 +66,15 @@ __END__
     %label{:for => 'blue_button', :class => 'yellow'}
       %input{:type => 'radio', :name => 'color', :value => 'yellow'}
     %input{:type => 'submit', :value => 'add'}  
+  %iframe{:src => "board", :id => "board_frame"}
+  #board
+
+@@ board
+%html
+  %head
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/base.css'}
+    %script{:type => 'text/javascript', :src => '/add_items.js'}
+    %script{:type => 'text/javascript', :src => '/mootools.js'}
+    
+  %body
+    #board

@@ -26,3 +26,13 @@
 .yellow { background-color: yellow; }
 .green { background-color: green; }
 
+.item {
+  position: absolute;
+  width: 99px;
+  height: 99px;
+}
+
+#board_frame {
+  width: 100%;
+  height: 500px;
+}
