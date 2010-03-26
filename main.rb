@@ -67,7 +67,9 @@ __END__
             %a{:href => '/login'} Log in
           %li
             %a{:href => '/signup'} Sign up
-      #title Kwerk
+      #title
+        Kwerk - 
+        %a{:href => 'http://github.com/erikpukinskis/kwerk'} source code
     = yield
 
 @@ index
