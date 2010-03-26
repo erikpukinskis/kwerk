@@ -43,15 +43,17 @@ folder, do:
     git push heroku master
 
 ... of course, replace "supa_dupa_kwerk" with whatever name you want to give your version
-of kwerk.
+of kwerk.  Your version of Kwerk will then be up and running at 
+http://whatever_name_you_chose.heroku.com
 
 ### Contributing your code
 
 If you add something cool to Kwerk, fork 
 [the main kwerk repository](http://github.com/erikpukinskis/kwerk), push your changes, and
-send a pull request.  If your work looks good it'll get merged and pushed to the main Kwerk
-site.
+send a pull request on Github. Some good instructions on how to do this are 
+[here](http://help.github.com/forking/). If your work looks good it'll get merged and pushed 
+to the main Kwerk site. 
 
 ## Credits
 
-This software was written by Erik Pukinskis <erik@snowedin.net>.
+This software was written by Erik Pukinskis <erik@snowedin.net> so far.  Help out!
