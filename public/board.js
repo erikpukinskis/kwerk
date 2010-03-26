@@ -1,7 +1,11 @@
 var items
-function initialize() {
+
+window.addEvent('domready', function() { 
   items = {"red": [], "yellow": [], "green": [], "blue": []};
-}
+  board_width = 1000;
+  board_height = 500;
+  window.scroll(1000 - board_width/2, 1000 - board_height/2);
+}); 
 
 function add_item(description, color) {
   items[color].push(description);
@@ -50,5 +54,3 @@ function add_div(x, y,color, description) {
 function quadrant_size(color) {
   return Math.ceil(Math.sqrt(items[color].length));
 }
-
-initialize();

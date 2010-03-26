@@ -73,8 +73,7 @@ __END__
 %html
   %head
     %link{:rel => 'stylesheet', :type => 'text/css', :href => '/base.css'}
-    %script{:type => 'text/javascript', :src => '/add_items.js'}
-    %script{:type => 'text/javascript', :src => '/mootools.js'}
-    
+    %script{:type => 'text/javascript', :src => '/mootools.js'}    
+    %script{:type => 'text/javascript', :src => '/board.js'}
   %body
     #board
