@@ -30,8 +30,10 @@ __END__
 !!!
 %html
   %head
-    %title hello!
+    %title Kwerk
     %link{:rel => 'stylesheet', :type => 'text/css', :href => '/base.css'}
+    %script{:type => 'text/javascript', :src => '/add_items.js'}
+    %script{:type => 'text/javascript', :src => '/mootools.js'}
   %body
     #top_bar
       %ul#account_links
@@ -44,8 +46,19 @@ __END__
             %a{:href => '/login'} Log in
           %li
             %a{:href => '/signup'} Sign up
-      #title Name goes here
+      #title Kwerk
     = yield
 
 @@ index
-hi
+- if logged_in?
+  %form{:onsubmit => "handle_add_item_form_submit(this); return false;"}
+    %input{:type => 'text', :name => 'description'}
+    %label{:for => 'blue_button', :class => 'blue'}
+      %input{:type => 'radio', :name => 'color', :value => 'blue'}
+    %label{:for => 'blue_button', :class => 'red'}
+      %input{:type => 'radio', :name => 'color', :value => 'red'}
+    %label{:for => 'blue_button', :class => 'green'}
+      %input{:type => 'radio', :name => 'color', :value => 'green'}
+    %label{:for => 'blue_button', :class => 'yellow'}
+      %input{:type => 'radio', :name => 'color', :value => 'yellow'}
+    %input{:type => 'submit', :value => 'add'}  
