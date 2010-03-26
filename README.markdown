@@ -2,7 +2,8 @@
 
 Kwerk is a game that helps you know what to work on, currently being invented by
 [Kynthia Brunette](http://kynthiabru.net/). This software is a web-based version
-of Kwerk, written in Ruby and easily deployable on Heroku
+of Kwerk, written in Ruby with [Sinatra](http://www.sinatrarb.com/) and 
+[Datamapper](http://datamapper.org/), and easily deployable on [Heroku](http://heroku.com/).
 
 ## How to play
 
@@ -13,8 +14,9 @@ If you just want to play kwerk, go to [http://kwerk.heroku.com](http://kwerk.her
 If you want to hack on the kwerk code, here's what you've got to do...
 
 ### Local
-If you want to download the code and play with it on your own computer, you'll
-need to install [Ruby](http://www.ruby-lang.org) and [Rubygems](http://rubygems.org/). 
+To download the code and play with it on your own computer, you'll
+need to install [Ruby](http://www.ruby-lang.org), [Rubygems](http://rubygems.org/),
+and [Git](http://git-scm.com/).
 You'll also need to install the following gems:
 
     gem install sinatra haml dm-core sinatra-authentication data_objects do_postgres json
@@ -25,9 +27,10 @@ And then download the code and start the server:
     cd kwerk
     ruby main.rb
 
-If everything went according to plan, you should be able to navigate to [http://localhost:4567] 
+If everything went according to plan, you should be able to navigate to 
+[http://localhost:4567](http://localhost:4567) 
 and play with it. If you are going to be making lots of changes,
-[shotgun](http://github.com/rtomayko/shotgun) will make your life easier.
+[Shotgun](http://github.com/rtomayko/shotgun) will make your life easier.
 
 ### Deploying to Heroku
 
