@@ -6,7 +6,7 @@ of Kwerk, written in Ruby and easily deployable on Heroku
 
 ## How to play
 
-If you just want to play kwerk, go to [http://kwerk.heroku.com].
+If you just want to play kwerk, go to [http://kwerk.heroku.com](http://kwerk.heroku.com).
 
 ## Development
 
@@ -27,7 +27,7 @@ And then download the code and start the server:
 
 If everything went according to plan, you should be able to navigate to [http://localhost:4567] 
 and play with it. If you are going to be making lots of changes,
-[http://github.com/rtomayko/shotgun](shotgun) will make your life easier.
+[shotgun](http://github.com/rtomayko/shotgun) will make your life easier.
 
 ### Deploying to Heroku
 
@@ -48,3 +48,7 @@ If you add something cool to Kwerk, fork
 [the main kwerk repository](http://github.com/erikpukinskis/kwerk), push your changes, and
 send a pull request.  If your work looks good it'll get merged and pushed to the main Kwerk
 site.
+
+## Credits
+
+This software was written by Erik Pukinskis <erik@snowedin.net>.
