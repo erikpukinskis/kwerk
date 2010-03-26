@@ -1,17 +1,50 @@
-# Erik's App Template
+## Kwerk
 
-This is just a little template I use to get Sinatra apps up and running.  Works on Heroku.
+Kwerk is a game that helps you know what to work on, currently being invented by
+[Kynthia Brunette](http://kynthiabru.net/). This software is a web-based version
+of Kwerk, written in Ruby and easily deployable on Heroku
 
-# Deployment
+## How to play
 
-To download the code and deploy on heroku, install the heroku gem and do:
+If you just want to play kwerk, go to [http://kwerk.heroku.com].
 
-    git clone git@github.com:erikpukinskis/template.git your_project_name
-    cd your_project_name
-    heroku create your_project_name --stack bamboo-mri-1.9.1
+## Development
+
+If you want to hack on the kwerk code, here's what you've got to do...
+
+### Local
+If you want to download the code and play with it on your own computer, you'll
+need to install [Ruby](http://www.ruby-lang.org) and [Rubygems](http://rubygems.org/). 
+You'll also need to install the following gems:
+
+    gem install sinatra haml dm-core sinatra-authentication data_objects do_postgres json
+
+And then download the code and start the server:
+
+    git clone git@github.com:erikpukinskis/kwerk.git
+    cd kwerk
+    ruby main.rb
+
+If everything went according to plan, you should be able to navigate to [http://localhost:4567] 
+and play with it. If you are going to be making lots of changes,
+[http://github.com/rtomayko/shotgun](shotgun) will make your life easier.
+
+### Deploying to Heroku
+
+If you make some changes and want to get your new version on the web, it's a snap to deploy
+with Heroku. Follow the instructions for local development, and then from within the kwerk
+folder, do:
+
+    gem install heroku
+    heroku create supa_dupa_kwerk --stack bamboo-mri-1.9.1
     git push heroku master
 
-And you should be running at http://your_project_name.heroku.com. It would
-probably be good to set a secret key for your sessions too:
+... of course, replace "supa_dupa_kwerk" with whatever name you want to give your version
+of kwerk.
 
-    heroku config:add SESSION_SECRET="<put your own random stuff here>"
+### Contributing your code
+
+If you add something cool to Kwerk, fork 
+[the main kwerk repository](http://github.com/erikpukinskis/kwerk), push your changes, and
+send a pull request.  If your work looks good it'll get merged and pushed to the main Kwerk
+site.
